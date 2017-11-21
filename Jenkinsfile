@@ -19,13 +19,13 @@ podTemplate(label: 'mypod', containers: [
             }
 
             stage('Echo') {
-                sh 'mvn -B package deploy'
+                sh 'echo "test"'
             }
         }
         
-        container('docker') {
-            stage('Docker build') {
-                sh 'docker build -t health-check-service .'
+        container('klar') {
+            stage('test klar') {
+                sh 'echo "test"'
             }
         }
     }
